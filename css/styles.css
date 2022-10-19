@@ -1,4 +1,5 @@
 /* змінні */
+
 :root {
   --color-main: #ffffff;
   --color-accent: #2196f3;
@@ -10,16 +11,22 @@
 
   --bgn-color-light: #f5f4fa;
   --bgn-color-dark: #2f303a;
+  --bgn-color-hero: #c4c4c4;
 
   --btn-color-accent: #188ce8;
   --line-header-color: #ececec;
   --border-card-color: #eeeeee;
+
+  --icon-color: #afb1b8;
+  --socials-color: rgba(255, 255, 255, 0.1);
 
   --shadow-button-color: 0px 4px 4px rgba(0, 0, 0, 0.15);
   --shadow-card-color: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-filter-color: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  --shadow-portfolio-color: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* глобальні стилі */
@@ -80,7 +87,10 @@ body {
   margin: -1px;
 }
 
-section {
+.section {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -105,6 +115,7 @@ img {
 }
 
 /* хедер */
+
 .page-header {
   padding-top: 24px;
   padding-bottom: 25px;
@@ -156,18 +167,35 @@ img {
 .current,
 .page-link:hover,
 .page-link:focus,
-.contact:hover,
 .contact:focus,
 .contact-footer:hover,
 .contact-footer:focus {
   color: var(--color-accent);
 }
 
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  fill: var(--text-color-main);
+}
+
+.contact-item:hover {
+  fill: var(--color-accent);
+  color: var(--color-accent);
+}
+
 /* герой */
+
 .section-hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  background-color: var(--bgn-color-dark);
+  background-color: var(--bgn-color-hero);
+  background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/section-hero/hero-image-bgn.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .container-hero {
@@ -204,6 +232,7 @@ img {
 }
 
 /* наші переваги */
+
 .benefit-list {
   display: flex;
   justify-content: space-between;
@@ -211,6 +240,17 @@ img {
 
 .item-benefit {
   width: 270px;
+}
+
+.benefit-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--bgn-color-light);
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 .subtitle {
@@ -222,6 +262,7 @@ img {
 }
 
 /* чим ми займаємося */
+
 .section-work {
   padding-top: 0;
 }
@@ -240,6 +281,7 @@ img {
 }
 
 /* наша команда */
+
 .section-team {
   background-color: var(--bgn-color-light);
 }
@@ -273,11 +315,64 @@ img {
   text-align: center;
 }
 
+.desc-team {
+  margin-bottom: 16px;
+}
+
+.social-link-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-link-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--icon-color);
+}
+
+.social-link-item:hover {
+  fill: var(--color-main);
+  background-color: var(--color-accent);
+}
+
+/* постійні клієнти */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.item-clients {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  padding: 16px 32px;
+  fill: var(--icon-color);
+}
+
+.item-clients:hover {
+  border-color: var(--color-accent);
+  fill: var(--color-accent);
+}
+
 /* футер */
+
 .section-footer {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--bgn-color-dark);
+}
+
+.container-footer {
+  display: flex;
+  gap: 70px;
 }
 
 .section-footer .logo,
@@ -301,6 +396,19 @@ img {
   color: var(--text-color-contact);
 }
 
+.call-to-action {
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--color-main);
+  margin-bottom: 20px;
+}
+
+.social-link {
+  fill: var(--color-main);
+  background-color: var(--socials-color);
+}
+
 /*портфоліо */
 
 .portfolio-filter {
@@ -318,6 +426,10 @@ img {
 
 .portfolio-item {
   flex-basis: calc((100% - 2 * 30px) / 3);
+}
+
+.portfolio-item:hover {
+  box-shadow: var(--shadow-portfolio-color);
 }
 
 .project-card {
