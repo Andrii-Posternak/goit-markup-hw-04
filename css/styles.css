@@ -167,7 +167,6 @@ img {
 .current,
 .page-link:hover,
 .page-link:focus,
-.contact:focus,
 .contact-footer:hover,
 .contact-footer:focus {
   color: var(--color-accent);
@@ -180,7 +179,8 @@ img {
   fill: var(--text-color-main);
 }
 
-.contact-item:hover {
+.contact-item:hover,
+.contact-item:focus {
   fill: var(--color-accent);
   color: var(--color-accent);
 }
@@ -335,7 +335,8 @@ img {
   fill: var(--icon-color);
 }
 
-.social-link-item:hover {
+.social-link-item:hover,
+.social-link-item:focus {
   fill: var(--color-main);
   background-color: var(--color-accent);
 }
@@ -348,16 +349,21 @@ img {
   gap: 30px;
 }
 
-.item-clients {
+.link-clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 170px;
   height: 92px;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  padding: 16px 32px;
   fill: var(--icon-color);
 }
 
-.item-clients:hover {
+.link-clients:hover,
+.link-clients:focus,
+.link-clients:hover .icon-clients,
+.link-clients:focus .icon-clients {
   border-color: var(--color-accent);
   fill: var(--color-accent);
 }
@@ -372,6 +378,7 @@ img {
 
 .container-footer {
   display: flex;
+  align-items: baseline;
   gap: 70px;
 }
 
@@ -397,6 +404,7 @@ img {
 }
 
 .call-to-action {
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
